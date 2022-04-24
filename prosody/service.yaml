@@ -4,7 +4,7 @@ metadata:
   name: prosody
 spec:
   ports:
-  - name: fileTransferProxy
+  - name: ftp
     port: 5000
   - name: c2s
     port: 5222
@@ -14,7 +14,7 @@ spec:
     port: 5280
   - name: https
     port: 5281
-  - name: externalComponents
+  - name: components
     port: 5347
-  - name: telnetConsole
+  - name: telnet
     port: 5582
