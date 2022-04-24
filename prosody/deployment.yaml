@@ -10,7 +10,7 @@ spec:
       - name: prosody
         image: ghcr.io/two-first-names/prosody-docker
         ports:
-        - name: fileTransferProxy
+        - name: ftp
           containerPort: 5000
         - name: c2s
           containerPort: 5222
@@ -20,9 +20,9 @@ spec:
           containerPort: 5280
         - name: https
           containerPort: 5281
-        - name: externalComponents
+        - name: components
           containerPort: 5347
-        - name: telnetConsole
+        - name: telnet
           containerPort: 5582
         volumeMounts:
         - name: prosody-config
