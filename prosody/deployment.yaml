@@ -27,6 +27,8 @@ spec:
         volumeMounts:
         - name: prosody-config
           mountPath: /etc/prosody
+        - name: prosody-data
+          mountPath: /var/lib/prosody
         - name: prosody-tls
           mountPath: /certs
       volumes:
@@ -36,3 +38,6 @@ spec:
         - name: prosody-tls
           secret:
             secretName: prosody-tls
+        - name: prosody-data
+          persistentVolumeClaim:
+            claimName: prosody-data
