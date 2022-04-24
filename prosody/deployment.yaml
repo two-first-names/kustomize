@@ -35,6 +35,8 @@ spec:
           mountPath: /var/lib/prosody
         - name: prosody-tls
           mountPath: /certs
+        - name: prosody-run
+          mountPath: /var/run/prosody
       volumes:
         - name: prosody-config
           configMap:
@@ -45,3 +47,5 @@ spec:
         - name: prosody-data
           persistentVolumeClaim:
             claimName: prosody-data
+        - name: prosody-run
+          emptyDir: {}
