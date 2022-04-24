@@ -26,13 +26,13 @@ spec:
           containerPort: 5582
         volumeMounts:
         - name: prosidy-config
-          mountPath: /etc/prosidy
+          mountPath: /etc/prosody
         - name: prosidy-tls
           mountPath: /certs
       volumes:
-        - name: prosidy-config
+        - name: prosody-config
           configMap:
-            name: prosidy-config
-        - name: prosidy-tls
+            name: prosody-config
+        - name: prosody-tls
           secret:
-            secretName: prosidy-tls
+            secretName: prosody-tls
