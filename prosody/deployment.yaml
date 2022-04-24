@@ -25,9 +25,9 @@ spec:
         - name: telnetConsole
           containerPort: 5582
         volumeMounts:
-        - name: prosidy-config
+        - name: prosody-config
           mountPath: /etc/prosody
-        - name: prosidy-tls
+        - name: prosody-tls
           mountPath: /certs
       volumes:
         - name: prosody-config
