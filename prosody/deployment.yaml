@@ -8,7 +8,11 @@ spec:
     spec:
       containers:
       - name: prosody
-        image: ghcr.io/two-first-names/prosody-docker
+        image: ghcr.io/two-first-names/prosody-docker  
+        securityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+          fsGroup: 1000
         ports:
         - name: ftp
           containerPort: 5000
