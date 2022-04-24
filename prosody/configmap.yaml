@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: prosody-config 
 data:
-  prosidy.cfg.lua: |
+  prosody.cfg.lua: |
     -- Prosody XMPP Server Configuration
     --
     -- Information on configuring Prosody can be found on our
@@ -124,7 +124,7 @@ data:
 
     -- Location of directory to find certificates in (relative to main config file):
     certificate = "/certs/tls.crt"
-    
+
     Include "*.vhost.cfg.lua"
     Include "*.cmpt.cfg.lua"
   logging.conf.cfg.lua: |
