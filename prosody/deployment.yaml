@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prosody
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - name: prosody
+        image: ghcr.io/two-first-names/prosody-docker
+        ports:
+        - name: fileTransferProxy
+          containerPort: 5000
+        - name: c2s
+          containerPort: 5222
+        - name: s2s
+          containerPort: 5269
+        - name: http
+          containerPort: 5280
+        - name: https
+          containerPort: 5281
+        - name: externalComponents
+          containerPort: 5347
+        - name: telnetConsole
+          containerPort: 5582
+      volumeMounts:
+      - name: prosidy-config
+        mountPath: /etc/prosidy
+      - name: prosidy-tls
+        mountPath: /certs
+  volumes:
+    - name: prosidy-config
+      configMap:
+        name: prosidy-config
+    - name: prosidy-tls
+      secret:
+        name: prosidy-tls
