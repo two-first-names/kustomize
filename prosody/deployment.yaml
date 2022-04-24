@@ -6,13 +6,13 @@ spec:
   replicas: 1
   template:
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
       - name: prosody
         image: ghcr.io/two-first-names/prosody-docker  
-        securityContext:
-          runAsUser: 1000
-          runAsGroup: 1000
-          fsGroup: 1000
         ports:
         - name: ftp
           containerPort: 5000
