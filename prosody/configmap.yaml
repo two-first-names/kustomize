@@ -24,7 +24,7 @@ data:
 
     daemonize = false
 
-    Include "conf.d/*.cfg.lua"
+    Include "*.conf.cfg.lua"
 
     -- Server-to-server authentication
     -- Require valid certificates for server-to-server connections?
@@ -124,15 +124,14 @@ data:
 
     -- Location of directory to find certificates in (relative to main config file):
     certificate = "/certs/tls.crt"
-
-    Include "admins.cfg.lua"
-    Include "vhost.d/*.cfg.lua"
-    Include "cmpt.d/*.cfg.lua"
-  conf.d/logging.cfg.lua: |
+    
+    Include "*.vhost.cfg.lua"
+    Include "*.cmpt.cfg.lua"
+  logging.conf.cfg.lua: |
     log = {
       info = "*console";
     }
-  conf.d/modules.cfg.lua: |
+  modules.conf.cfg.lua: |
     modules_enabled = {
       -- Generally required
         "disco"; -- Service discovery
@@ -196,7 +195,4 @@ data:
       -- "s2s"; -- Handle server-to-server connections
       -- "posix"; -- POSIX functionality, sends server to background, etc.
     }
-  admins.cfg.lua: ''
-  vhost.d/localhost.cfg.lua: ''
-  cmpt.d/localhost.cfg.lua: 'VirtualHost "localhost"'
 
