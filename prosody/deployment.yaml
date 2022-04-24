@@ -35,4 +35,4 @@ spec:
             name: prosidy-config
         - name: prosidy-tls
           secret:
-            name: prosidy-tls
+            secretName: prosidy-tls
