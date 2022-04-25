@@ -124,6 +124,7 @@ data:
 
     -- Location of directory to find certificates in (relative to main config file):
     certificate = "/certs/tls.crt"
+    https_certificate = "/certs/tls.crt"
 
     Include "*.vhost.cfg.lua"
     Include "*.cmpt.cfg.lua"
@@ -169,22 +170,22 @@ data:
         "admin_shell"; -- Allow secure administration via 'prosodyctl shell'
 
       -- HTTP modules
-        --"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
+        "bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
         "http_openmetrics"; -- for exposing metrics to stats collectors
-        --"websocket"; -- XMPP over WebSockets
+        "websocket"; -- XMPP over WebSockets
 
       -- Other specific functionality
-        --"announce"; -- Send announcement to all online users
-        --"groups"; -- Shared roster support
+        "announce"; -- Send announcement to all online users
+        "groups"; -- Shared roster support
         --"legacyauth"; -- Legacy authentication. Only used by some old clients and bots.
         --"mimicking"; -- Prevent address spoofing
-        --"motd"; -- Send a message to users when they log in
+        "motd"; -- Send a message to users when they log in
         --"proxy65"; -- Enables a file transfer proxy service which clients behind NAT can use
         --"s2s_bidi"; -- Bi-directional server-to-server (XEP-0288)
-        --"server_contact_info"; -- Publish contact information for this service
+        "server_contact_info"; -- Publish contact information for this service
         --"tombstones"; -- Prevent registration of deleted accounts
         --"watchregistrations"; -- Alert admins of registrations
-        --"welcome"; -- Welcome users who register accounts
+        "welcome"; -- Welcome users who register accounts
 
         "lastactivity";
     }
