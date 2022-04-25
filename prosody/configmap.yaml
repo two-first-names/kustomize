@@ -132,6 +132,10 @@ data:
     log = {
       info = "*console";
     }
+  conversejs.conf.cfg.lua: |
+    conversejs_options = {
+      view_mode = "fullscreen";
+    }
   modules.conf.cfg.lua: |
     modules_enabled = {
       -- Generally required
@@ -187,6 +191,7 @@ data:
         --"watchregistrations"; -- Alert admins of registrations
         "welcome"; -- Welcome users who register accounts
 
+        "conversejs";
         "lastactivity";
     }
 
